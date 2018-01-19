@@ -152,8 +152,8 @@ app.get("/notes/:id", function(req, res) {
 });
 
 
-app.get("/delete/:id", function(req, res) {
-	Note.remove({
+app.post("/delete/:id", function(req, res) {
+	Article.remove({
 		"_id": req.params.id
 	})
 	.exec(function(error, doc) {
